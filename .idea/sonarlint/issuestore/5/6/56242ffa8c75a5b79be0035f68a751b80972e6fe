@@ -1,0 +1,61 @@
+
+upython:S1192–"PDefine a constant instead of duplicating this literal 'Parallel Events' 4 times.(†¿à£üÿÿÿÿ8İÊ»Ü€0
+npython:S1192‹"NDefine a constant instead of duplicating this literal 'SpaceFont.ttf' 8 times.(ÖçÉË8ŞÊ»Ü€0
+Opython:S1066Ã"/Merge this if statement with the enclosing one.(óÊï–8ŞÊ»Ü€0
+Npython:S1066Ÿ"/Merge this if statement with the enclosing one.(¾˜ìl8âıÀÜ€0
+Opython:S1066ë"/Merge this if statement with the enclosing one.(â®¬´8âıÀÜ€0
+fpython:S2208"GImport only needed names or import the module and then use its members.(øÿˆÊ8Ò€»Ü€0
+rpython:S1854¥"MRemove this assignment to local variable 'gui_shop'; the value is never used.(é€§Øûÿÿÿÿ8ŞÊ»Ü€0
+ipython:S1854Ò"JRemove this assignment to local variable 'click'; the value is never used.(Éÿ¹D8ŞÊ»Ü€0
+wpython:S1854–"RRemove this assignment to local variable 'sc_text_start'; the value is never used.(†¿à£üÿÿÿÿ8ŞÊ»Ü€0
+Ypython:S1481´"4Remove the unused local variable "gui_substrate_12".(ùš¶³úÿÿÿÿ8àÊ»Ü€0
+Opython:S1481î"/Remove the unused local variable "down_motion".(¡Ñ«8áÊ»Ü€0
+Jpython:S1481"%Remove the unused local variable "g".(Ÿ†ó§øÿÿÿÿ8âıÀÜ€0
+Jpython:S1481õ"%Remove the unused local variable "x".(©šõùÿÿÿÿ8àÊ»Ü€0
+Jpython:S1481ƒ"%Remove the unused local variable "x".(©šõùÿÿÿÿ8ãıÀÜ€0
+Jpython:S1481"%Remove the unused local variable "x".(©šõùÿÿÿÿ8ãıÀÜ€0
+Npython:S1481"*Remove the unused local variable "screen".(®¢Ü¾úÿÿÿÿ8Ó€»Ü€0
+Opython:S1481÷"*Remove the unused local variable "screen".(æúÈşÿÿÿÿ8áÊ»Ü€0
+Opython:S1481¤"*Remove the unused local variable "screen".(¦äûšıÿÿÿÿ8áÊ»Ü€0
+Opython:S1481î"*Remove the unused local variable "screen".(æúÈşÿÿÿÿ8ãıÀÜ€0
+Opython:S1481ğ"*Remove the unused local variable "screen".(¦äûšıÿÿÿÿ8ãıÀÜ€0
+Opython:S1481®"*Remove the unused local variable "screen".(¦äûšıÿÿÿÿ8ãıÀÜ€0
+Ppython:S1481£"+Remove the unused local variable "game_ov".(Ò’ÊÕÿÿÿÿÿ8àÊ»Ü€0
+Kpython:S1481ê"+Remove the unused local variable "game_ov".(‡Ú¢Ø8ãıÀÜ€0
+Ppython:S1481ğ"0Remove the unused local variable "right_motion".(‡èç‹8Ó€»Ü€0
+Ipython:S1481w"%Remove the unused local variable "i".(£ıú¼şÿÿÿÿ8ßÊ»Ü€0
+Epython:S1481¨"%Remove the unused local variable "i".(ìØ™ 8ãıÀÜ€0
+Epython:S1481â"%Remove the unused local variable "i".(ìØ™ 8ãıÀÜ€0
+Gpython:S1481"(Remove the unused local variable "weap".(ËÙ¨8ãıÀÜ€0
+Gpython:S1481Ø"(Remove the unused local variable "weap".(ËÙ¨8ãıÀÜ€0
+Tpython:S1481ä"/Remove the unused local variable "cursor_coor".(øúçåùÿÿÿÿ8ãıÀÜ€0
+Opython:S1481ï"/Remove the unused local variable "left_motion".(ÆŠ©¾8Öƒ¯Ü€0
+Epython:S1481ö"%Remove the unused local variable "y".(“Ë–ø8ãıÀÜ€0
+Epython:S1481„"%Remove the unused local variable "y".(“Ë–ø8äıÀÜ€0
+Epython:S1481‘"%Remove the unused local variable "y".(“Ë–ø8äıÀÜ€0
+Epython:S1481›"%Remove the unused local variable "y".(“Ë–ø8äıÀÜ€0
+Jpython:S1481"*Remove the unused local variable "f_cash".(×òÔü8áÊ»Ü€0
+Fpython:S1481"'Remove the unused local variable "riz".(•… È8Ô€»Ü€0
+Cpython:S125„"Remove this commented out code.(øÊ‡àøÿÿÿÿ8âÊ»Ü€0
+Cpython:S125è"Remove this commented out code.(¨Ÿùıÿÿÿÿ8âÊ»Ü€0
+Cpython:S125‡"Remove this commented out code.(ò²ø¶şÿÿÿÿ8âÊ»Ü€0
+Cpython:S125»"Remove this commented out code.(îïÜüÿÿÿÿ8âÊ»Ü€0
+Cpython:S125Ü"Remove this commented out code.(¯ ²Õÿÿÿÿÿ8âÊ»Ü€0
+Cpython:S125å"Remove this commented out code.(¯ ²Õÿÿÿÿÿ8âÊ»Ü€0
+Cpython:S125î"Remove this commented out code.(¯ ²Õÿÿÿÿÿ8âÊ»Ü€0
+Cpython:S125÷"Remove this commented out code.(¯ ²Õÿÿÿÿÿ8âÊ»Ü€0
+Cpython:S125§"Remove this commented out code.(¤ºâşÿÿÿÿ8âÊ»Ü€0
+Cpython:S125ê"Remove this commented out code.(¾«‚éşÿÿÿÿ8âÊ»Ü€0
+Cpython:S125É"Remove this commented out code.(ÙìĞíøÿÿÿÿ8äıÀÜ€0
+upython:S3699"PRemove this use of the output from "remove"; "remove" doesnâ€™t return anything.(Ÿ†ó§øÿÿÿÿ8äıÀÜ€0
+>python:S125²"Remove this commented out code.(æ¿¨¸8äıÀÜ€0
+>python:S125É"Remove this commented out code.(æ¿¨¸8äıÀÜ€0
+Cpython:S125ç"Remove this commented out code.(ÇÊ±ªıÿÿÿÿ8äıÀÜ€0
+>python:S125ß"Remove this commented out code.(ëúƒœ8åıÀÜ€0
+>python:S125ç"Remove this commented out code.(ÉÄâê8åıÀÜ€0
+>python:S125ı"Remove this commented out code.(ê†îá8åıÀÜ€0
+Cpython:S125Š"Remove this commented out code.(šÆª²ûÿÿÿÿ8åıÀÜ€0
+>python:S125•"Remove this commented out code.(ê†îá8åıÀÜ€0
+=python:S125 "Remove this commented out code.(÷£Ï[8åıÀÜ€0
+Npython:S1940¤")Use the opposite operator ("!=") instead.(öûì¬úÿÿÿÿ8åıÀÜ€0
+Hpython:S108¥")Either remove or fill this block of code.(ã‘Û¾8æıÀÜ€0
