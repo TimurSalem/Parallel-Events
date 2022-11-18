@@ -51,39 +51,26 @@ class FirstGame(Game):
         dest_x_enemie = hero.body.centerx
         dest_y_enemie = hero.body.centerx
 
-        # bullet = object.Barrier(parent=self.surface, objects=[meteor], width=60, height=60, x=1265, y=835, color=(255, 0, 30))
-
-        cursor_coor = (1, 1)
-
-        weap = False
-
-        speed_bulet = 8
-
-        cof = 1
-
         cooldown = 0
 
         enemi_cooldown = 0
 
-        bullets_move = [object.Barrier(parent=self.surface, objects=[meteor, meteor_2], width=60, height=60, x=1265, y=835, color=(255, 0, 30))]
+        bullets_right = [
+            object.Barrier(parent=self.surface, objects=[meteor, meteor_2], width=60, height=60, x=1265, y=835,
+                           color=(255, 0, 30))]
+        bullets_left = [
+            object.Barrier(parent=self.surface, objects=[meteor, meteor_2], width=60, height=60, x=1265, y=835,
+                           color=(255, 0, 30))]
 
-        bullets_right = [object.Barrier(parent=self.surface, objects=[meteor, meteor_2], width=60, height=60, x=1265, y=835, color=(255, 0, 30))]
-        bullets_left = [object.Barrier(parent=self.surface, objects=[meteor, meteor_2], width=60, height=60, x=1265, y=835, color=(255, 0, 30))]
+        bullets_enemie_right = [
+            object.Barrier(parent=self.surface, objects=[meteor, meteor_2], width=60, height=60, x=1265, y=835,
+                           color=(255, 0, 30))]
+        bullets_enemie_left = [
+            object.Barrier(parent=self.surface, objects=[meteor, meteor_2], width=60, height=60, x=1265, y=835,
+                           color=(255, 0, 30))]
 
-        bullets_enemie_right = [object.Barrier(parent=self.surface, objects=[meteor, meteor_2], width=60, height=60, x=1265, y=835,
-                                        color=(255, 0, 30))]
-        bullets_enemie_left = [object.Barrier(parent=self.surface, objects=[meteor, meteor_2], width=60, height=60, x=1265, y=835,
-                                       color=(255, 0, 30))]
-
-        speeds_x = []
         speeds_y = [0]
         speeds_enemie_y = [0]
-
-        r = False
-
-        sprite_ship = './sprites/govno.png'
-        e_ship = './sprites/govno.png'
-        sprite_ship2 = './sprites/govno5.png'
 
         fon = './sprites/fon_game.png'
         fon2 = './sprites/fon_game.jpg'
@@ -103,8 +90,6 @@ class FirstGame(Game):
         hero.load_sprites(name='explosion', path='./sprites/explosion/', update=3)
         hero.load_sprites(name='motion_right', path='./sprites/Ships/1/Pattern2/Yellow/Right/', update=7)
         hero.load_sprites(name='motion_left', path='./sprites/Ships/1/Pattern2/Yellow/Left/', update=7)
-        # moon.load_sprites(name='moon_animation', path='./Moon/', update=10)
-
 
         platform_1.skin = pygame.image.load(fon)
         platform_2.skin = pygame.image.load(fon2)
@@ -113,8 +98,6 @@ class FirstGame(Game):
         enemie.skin = pygame.image.load(space_ship)
         meteor.skin = pygame.image.load(meteor_sprite)
         meteor_2.skin = pygame.image.load(meteor_sprite_2)
-        # meteor.skin = pygame.image.load(space_ship)
-
 
         t = False
         r = False
@@ -123,25 +106,9 @@ class FirstGame(Game):
         m = False
 
         speed_x = 22
-        speed_y = 22
 
         speed_enemie_x = 12
-        speed_enemie_y = 12
-
-        dest_x = 0
-        dest_y = 0
-
-        delta_x = 0
-        delta_y = 0
-
-        count_up = 0
-
-        x = 10
-        y = 10
-
         q = 0
-
-        p = False
 
         timer = 80
 
@@ -149,16 +116,12 @@ class FirstGame(Game):
 
         score = 0
 
-        speed_bulet_y = 1
-        speed_bulet_x = 1
-
-        i: int = 0
+        i = 0
         shot_sound = pygame.mixer.Sound('sci-fi_shot_sound.wav')
         click_sound = pygame.mixer.Sound('click_sound.wav')
 
         win_sound = pygame.mixer.Sound('sci-fi_win_sound.wav')
         explosion_sound = pygame.mixer.Sound('explosion_sound.mp3')
-
 
         pygame.mixer.music.load('Checking Manifest.mp3')
         pygame.mixer.music.set_volume(1)
@@ -172,8 +135,6 @@ class FirstGame(Game):
         #     pygame.Surface.blit(text, (x, y))
 
         cash = 0
-
-
 
         f_start = pygame.font.Font('SpaceFont.ttf', 200)
         f = pygame.font.Font('SpaceFont.ttf', 100)
@@ -232,8 +193,10 @@ class FirstGame(Game):
         game_over = True
         while self.RUNNER:
             if start_menu == True:
-                gui_start = object.Object(parent=self.surface, width=300, height=140, x=440, y=340, color=color_start_button)
-                gui_shop = object.Object(parent=self.surface, width=300, height=140, x=440, y=500, color=color_shop_button)
+                gui_start = object.Object(parent=self.surface, width=300, height=140, x=440, y=340,
+                                          color=color_start_button)
+                gui_shop = object.Object(parent=self.surface, width=300, height=140, x=440, y=500,
+                                         color=color_shop_button)
 
                 platform_2.blit()
                 gui_start.blit()
@@ -262,7 +225,6 @@ class FirstGame(Game):
                 self.set_icon('ole.png')
 
                 if text_start_y > 60:
-
                     text_start_y -= 2
 
                 self.display_update()
@@ -270,7 +232,6 @@ class FirstGame(Game):
                 # if gui_start.body.x < click[0] < gui_start.body.right:
                 #     if gui_start.body.y < click[1] < gui_start.body.bottom:
                 #         game_over = False
-
 
                 for event in self.events():
                     print(event)  # отслеживание событий
@@ -307,7 +268,6 @@ class FirstGame(Game):
                     else:
                         color_shop_button = (30, 30, 40)
 
-
                     if event.type == 768:
                         game_over = False
                         start_menu = False
@@ -315,17 +275,21 @@ class FirstGame(Game):
             if shop == True:
                 mouse = pygame.mouse.get_pos()
 
-                gui_shop_list = object.Object(parent=self.surface, width=1000, height=600, x=100, y=50, color=(50, 50, 60))
+                gui_shop_list = object.Object(parent=self.surface, width=1000, height=600, x=100, y=50,
+                                              color=(50, 50, 60))
                 gui_shop_1 = object.Object(parent=self.surface, width=1000, height=80, x=100, y=50, color=(60, 60, 70))
                 gui_shop_2 = object.Object(parent=self.surface, width=1000, height=30, x=100, y=130, color=(40, 40, 50))
                 gui_shop_3 = object.Object(parent=self.surface, width=300, height=300, x=180, y=210, color=(40, 40, 50))
                 gui_shop_4 = object.Object(parent=self.surface, width=300, height=300, x=720, y=210, color=(40, 40, 50))
-                gui_shop_ch_1 = object.Object(parent=self.surface, width=500, height=60, x=100, y=130, color=(40, 40, 50))
-                gui_shop_ch_2 = object.Object(parent=self.surface, width=500, height=40, x=600, y=130, color=(40, 40, 50))
+                gui_shop_ch_1 = object.Object(parent=self.surface, width=500, height=60, x=100, y=130,
+                                              color=(40, 40, 50))
+                gui_shop_ch_2 = object.Object(parent=self.surface, width=500, height=40, x=600, y=130,
+                                              color=(40, 40, 50))
                 gui_shop_5 = object.Object(parent=self.surface, width=420, height=100, x=120, y=530, color=(40, 40, 50))
                 gui_shop_6 = object.Object(parent=self.surface, width=420, height=100, x=660, y=530, color=(40, 40, 50))
                 gui_tovar = object.Object(parent=self.surface, width=300, height=100, x=170, y=200, color=(40, 40, 50))
-                gui_tovar_2 = object.Object(parent=self.surface, width=300, height=100, x=770, y=260, color=(40, 40, 50))
+                gui_tovar_2 = object.Object(parent=self.surface, width=300, height=100, x=770, y=260,
+                                            color=(40, 40, 50))
                 gui_shop = object.Object(parent=self.surface, width=300, height=130, x=440, y=560,
                                          color=color_shop_button)
 
@@ -379,7 +343,6 @@ class FirstGame(Game):
                     # print(event)  # отслеживание событий
                     self.close(event)
 
-
                     if gui_shop_ch_1.body.x < mouse[0] < gui_shop_ch_1.body.right:
                         if gui_shop_ch_1.body.y < mouse[1] < gui_shop_ch_1.body.bottom:
                             # color_start_button = (20, 20, 33)
@@ -388,7 +351,6 @@ class FirstGame(Game):
                                 # gui_shop_ch_1.body.
 
                                 choose_bullets = 0
-
 
                     if gui_shop_3.body.x < mouse[0] < gui_shop_3.body.right:
                         if gui_shop_3.body.y < mouse[1] < gui_shop_3.body.bottom:
@@ -415,7 +377,6 @@ class FirstGame(Game):
                                 pygame.mixer.Sound.play(click_sound)
                                 shop = False
                                 start_menu = True
-
 
             if not game_over:
 
@@ -459,8 +420,6 @@ class FirstGame(Game):
                     screen = pygame.display.set_mode((1200, 700),
                                                      pygame.RESIZABLE)
 
-
-
                 # print(self.surface.get_size())
                 # pygame.mixer.music.load('SoundTreck.mp3')
                 # distante_vision.blit()
@@ -475,10 +434,11 @@ class FirstGame(Game):
                 gui_substrate_11 = object.Object(parent=self.surface, width=250, height=60, x=enemie.body.centerx - 80,
                                                  y=enemie.body.centery - 160, color=(30, 30, 40))
                 gui_substrate_12 = object.Object(parent=self.surface, width=230, height=40,
-                                                    x=enemie.body.centerx - 115,
-                                                    y=enemie.body.centery - 150, color=(20, 20, 30))
-                gui_enemi_healthbar = object.Object(parent=self.surface, width=enemie_health, height=40, x=enemie.body.centerx - 70,
-                                                 y=enemie.body.centery - 150, color=(200, 0, 40))
+                                                 x=enemie.body.centerx - 115,
+                                                 y=enemie.body.centery - 150, color=(20, 20, 30))
+                gui_enemi_healthbar = object.Object(parent=self.surface, width=enemie_health, height=40,
+                                                    x=enemie.body.centerx - 70,
+                                                    y=enemie.body.centery - 150, color=(200, 0, 40))
 
                 gui_tempbar = object.Object(parent=self.surface, width=temp, height=100, x=20, y=1440,
                                             color=color_temp)
@@ -527,11 +487,9 @@ class FirstGame(Game):
                 distante_vision.body.centerx = enemie.body.centerx
                 distante_vision.body.centery = enemie.body.centery
 
-
                 # platform_2.blit()
                 # platform_3.blit()
                 # platform_4.blit()
-
 
                 down_motion = 0
                 left_motion = 0
@@ -549,7 +507,6 @@ class FirstGame(Game):
                 self.set_capture('Parallel Events')
                 self.set_icon('ole.png')
 
-
                 # проверяем - уперся ли персонаж в преграду
                 self.window_borders([hero])
 
@@ -559,23 +516,7 @@ class FirstGame(Game):
                 X = hero.body.x
                 Y = hero.body.y
 
-
-                # platform_1.body.y = motion_up
-
-                # y_bul = bullet.body.y
-                # x_bul = bullet.body.x
-
                 tap_x = mouse[0] - 1280
-
-                # if tap_x > 0:
-                #     hero.skin = pygame.image.load(space_hero_ship_right)
-                # if tap_x < 0:
-                #     hero.skin = pygame.image.load(space_hero_ship_right)
-
-                # pygame.draw.polygon(self.surface, color=(30, 30, 40), points=[(500, 240), (600, 0), (530, 100), (530, 220)])
-
-            # SHOOTING
-
                 print(gui_substrate.body)
 
                 '''
@@ -584,7 +525,6 @@ class FirstGame(Game):
                 if cooldown <= 0:
                     if click[0]:
                         if temp < 730:
-
                             temp += 20
 
                         pygame.mixer.Sound.play(shot_sound)
@@ -600,7 +540,9 @@ class FirstGame(Game):
 
                         speed_y = delta_y / count_up
                         weap = True
-                        bullet = object.Barrier(parent=self.surface, objects=[], width=60, height=60, x=hero.body.centerx- 120, y=hero.body.y - 20, speed_x=speed_x, speed_y=speed_y, color=(255, 0, 30))
+                        bullet = object.Barrier(parent=self.surface, objects=[], width=60, height=60,
+                                                x=hero.body.centerx - 120, y=hero.body.y - 20, speed_x=speed_x,
+                                                speed_y=speed_y, color=(255, 0, 30))
                         if tap_x > 0:
                             bullets_right.append(bullet)
                         if tap_x < 0:
@@ -629,9 +571,8 @@ class FirstGame(Game):
                 if dest_y_enemie < hero.body.centery:
                     dest_y_enemie += 3
 
-
                 if hero.body.colliderect(distante_vision.body) == 1:
-                    if time/120 == int(time/120):
+                    if time / 120 == int(time / 120):
                         direction_y = random.randint(-2, 2)
                         direction_x = (random.randint(-2, 2) - direction_y)
 
@@ -657,7 +598,9 @@ class FirstGame(Game):
 
                         speed_enemie_y = delta_y / count_up
                         weap = True
-                        bullet = object.Barrier(parent=self.surface, objects=[], width=60, height=60, x=enemie.body.centerx, y=enemie.body.centery, speed_x=speed_enemie_x, speed_y=speed_enemie_y, color=(255, 0, 30))
+                        bullet = object.Barrier(parent=self.surface, objects=[], width=60, height=60,
+                                                x=enemie.body.centerx, y=enemie.body.centery, speed_x=speed_enemie_x,
+                                                speed_y=speed_enemie_y, color=(255, 0, 30))
                         if hero.body.centerx > enemie.body.centerx:
                             bullets_enemie_right.append(bullet)
                         if hero.body.centerx < enemie.body.centerx:
@@ -712,8 +655,6 @@ class FirstGame(Game):
                     if bull.body.x > 4560:
                         g = bullets_right.remove(bull)
 
-
-
                 for bull in bullets_left[1:]:
                     bull_sprite = pygame.image.load(bullets_hero_sprite)
 
@@ -731,7 +672,6 @@ class FirstGame(Game):
                             bullets_left.remove(bull)
                             enemie_health -= hero_damage
 
-
                     if bull.body.x < -3000:
                         bullets_left.remove(bull)
 
@@ -743,7 +683,6 @@ class FirstGame(Game):
                         bullets_left.remove(bull)
 
                     # print(bull.body.colliderect(meteor.body))
-
 
                 for bull in bullets_enemie_right[1:]:
                     bull_sprite = pygame.image.load(bullets_enemie_sprite)
@@ -791,7 +730,6 @@ class FirstGame(Game):
                     if bulls.body.x < -3000:
                         bullets_enemie_left.remove(bulls)
 
-
                 # MOTION
                 '''
                 Этот код отвечает за передвижение камеры и плавное ускорение вначале.
@@ -801,7 +739,7 @@ class FirstGame(Game):
                     hero.play_animation(action='motion_right')
                     timer -= 1
                     if timer > 10:
-                        X += ((timer+(80 - timer)) - timer)/8
+                        X += ((timer + (80 - timer)) - timer) / 8
                         # x_bul += ((timer+(80 - timer)) - timer)/10
 
                         hero.body.x = X
@@ -816,7 +754,6 @@ class FirstGame(Game):
                         for bull in bullets_enemie_left:
                             bull.body.x -= 10
 
-
                         platform_1.body.x -= 4
                         meteor.body.x -= 6
                         meteor_2.body.x -= 6
@@ -828,13 +765,12 @@ class FirstGame(Game):
                             # print(X)
                             hero.body.x = X
 
-
                 if r == True:
                     hero.play_animation(action='motion_left')
 
                     timer -= 1
                     if timer > 10:
-                        X -= ((timer+(80 - timer)) - timer)/8
+                        X -= ((timer + (80 - timer)) - timer) / 8
 
                         hero.body.x = X
 
@@ -848,24 +784,20 @@ class FirstGame(Game):
                         for bull in bullets_enemie_left:
                             bull.body.x += 10
 
-
-
                         platform_1.body.x += 4
                         meteor.body.x += 6
                         meteor_2.body.x += 6
                         enemie.body.x += 6
                         moon.body.x += 5
 
-
                         if hero.body.x < 1280:
                             X += (((1280 - hero.body.centerx) * -timer) / 700) + 1
                             hero.body.x = X
 
-
                 if s == True:
                     timer -= 1
                     if timer > 10:
-                        Y += ((timer+(80 - timer)) - timer)/8
+                        Y += ((timer + (80 - timer)) - timer) / 8
 
                         hero.body.y = Y
 
@@ -878,7 +810,6 @@ class FirstGame(Game):
                             bull.body.y -= 10
                         for bull in bullets_enemie_left:
                             bull.body.y -= 10
-
 
                         platform_1.body.y -= 4
                         meteor.body.y -= 6
@@ -894,7 +825,7 @@ class FirstGame(Game):
                 if m == True:
                     timer -= 1
                     if timer > 10:
-                        Y -= (((timer+(80 - timer)) - timer)/8)
+                        Y -= (((timer + (80 - timer)) - timer) / 8)
 
                         hero.body.y = Y
                     if timer <= 10:
@@ -912,7 +843,6 @@ class FirstGame(Game):
                         meteor_2.body.y += 6
                         enemie.body.y += 6
                         moon.body.y += 5
-
 
                         if hero.body.y < 750:
                             Y += (((750 - hero.body.y) * -timer) / 750) + 1
@@ -987,7 +917,6 @@ class FirstGame(Game):
                     # platform_1.body.x += 1230 - hero.body.x
                     # meteor.body.x += 1230 - hero.body.x
                     # enemie.body.x += 1230 - hero.body.x
-
 
                 if event.type == 768 and event.key == 115:
                     s = True
